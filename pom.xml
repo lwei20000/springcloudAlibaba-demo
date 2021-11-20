@@ -34,6 +34,7 @@
     <!-- 项目模块 -->
     <modules>
         <module>cloud-provider-payment8001</module>
+        <module>cloud-comsumer-order80</module>
     </modules>
 
     <parent>
