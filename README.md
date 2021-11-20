@@ -25,7 +25,7 @@
 
 
 
-# 二、
+# 二、搭建代码demo
 
 ## 2.1devtools热部署
 
@@ -72,3 +72,32 @@
 
 第五步：重启idea
 
+## 2.2、RunDashboard配置
+
+在workspace.xml中添加如下配置：
+
+```xml
+ <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+```
+
+<img src="/Users/weiliang/IdeaProjects/springcloudalibaba-demo/README.assets/image-20211120223504604.png" alt="image-20211120223504604" style="zoom:33%;" />
+
+我的mac中是service组件。
+
+<img src="/Users/weiliang/IdeaProjects/springcloudalibaba-demo/README.assets/image-20211120224919817.png" alt="image-20211120224919817" style="zoom:33%;" />
