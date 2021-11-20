@@ -71,11 +71,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <!--<dependency>
-            <groupId>com.atguigu.springcloud</groupId>
-            <artifactId>cloud-api-commons</artifactId>
+        <dependency>
+            <groupId>com.itcast</groupId>
+            <artifactId>cloud-api-common</artifactId>
             <version>${project.version}</version>
-        </dependency>-->
+        </dependency>
 
     </dependencies>
 
