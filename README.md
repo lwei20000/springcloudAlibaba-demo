@@ -27,7 +27,7 @@
 
 # 二、搭建代码demo
 
-## 2.1devtools热部署
+## 2.1、devtools热部署
 
 <img src="/Users/weiliang/IdeaProjects/springcloudalibaba-demo/README.assets/image-20211120211142186.png" alt="image-20211120211142186" style="zoom:25%;" />
 
@@ -101,3 +101,78 @@
 我的mac中是service组件。
 
 <img src="/Users/weiliang/IdeaProjects/springcloudalibaba-demo/README.assets/image-20211120224919817.png" alt="image-20211120224919817" style="zoom:33%;" />
+
+## 2.1、注册中心
+
+<img src="/Users/weiliang/IdeaProjects/springcloudalibaba-demo/README.assets/image-20211121101252920.png" alt="image-20211121101252920" style="zoom:50%;" />
+
+### eureka的自我保护
+
+**RENEWALS ARE LESSER THAN THE THRESHOLD. THE SELF PRESERVATION MODE IS TURNED OFF. THIS MAY NOT PROTECT INSTANCE EXPIRY IN CASE OF NETWORK/OTHER PROBLEMS.**
+
+一句话：某时刻一个为服务不可用了，Eureka不会立刻清理，依旧会对该微服务的信息进行保存。属于CAP理论中的AP分支。
+
+如何禁止自我保护：
+
+```yml
+  server:
+    #关闭自我保护机制，保证不可用服务立即被踢出（默认是开启的）
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
+```
+
+### zookeeper代替Eureka
+
+Eureka2.0之后停止更新。
+
+### Consul简介
+
+https://spring.io/projects/spring-cloud-consul
+
+Consul是一套开元的分布式服务发现和配置管理系统，由HashCorp公司用Go语言开发。
+
+
+
+### 三个注册中心异同点：
+
+```
+C：Consistency（强一致性）
+A：Availability（可用性）
+P：Partition tolerance（分区容错性）
+CAP理论关注粒度是数据，而不是整体系统设计的
+分布式场景下P一定要保障，所以分布式场景中要么是AP要么是CP！
+注：数据库mysql等是CA范畴，它不是分布式环境。
+```
+
+<img src="/Users/weiliang/IdeaProjects/springcloudalibaba-demo/README.assets/image-20211121161316973.png" alt="image-20211121161316973" style="zoom:50%;" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

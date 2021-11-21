@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * @Description:
  */
 @RestController
-@RequestMapping("comsumer")
+@RequestMapping("consumer")
 public class OrderController {
 
     public static final String PAYENT_URL = "http://localhost:8001";
@@ -33,6 +33,7 @@ public class OrderController {
     }
     @GetMapping("payment/selectOne/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") long id) {
+        System.out.println("aaaaaaaaaaaaa");
         return restTemplate.getForObject(PAYENT_URL+"/payment/selectOne/"+id,CommonResult.class);
     }
 
